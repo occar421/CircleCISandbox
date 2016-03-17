@@ -1,0 +1,3 @@
+test:
+  override:
+    - ./src/kotlin_knit_codecov/gradlew test
