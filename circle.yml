@@ -1,2 +1,6 @@
 general:
   build_dir: ./src/kotlin_knit_codecov/
+
+dependencies:
+  pre:
+    - chmod +x ./gradlew
