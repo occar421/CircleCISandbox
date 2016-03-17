@@ -1,6 +1,6 @@
 dependencies:
   pre:
-    - chmod -x ./src/kotlin_knit_codecov/gradlew
+    - chmod +x ./src/kotlin_knit_codecov/gradlew
 test:
   override:
     - ./src/kotlin_knit_codecov/gradlew test
