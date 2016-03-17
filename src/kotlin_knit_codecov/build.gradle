@@ -1,0 +1,29 @@
+group 'net.masuqat.example'
+version '1.0-SNAPSHOT'
+
+buildscript {
+	ext.kotlin_version = '1.0.1'
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+	}
+}
+
+apply plugin: 'kotlin'
+
+
+repositories {
+	mavenCentral()
+	maven {
+		url 'http://dl.bintray.com/ngsw-taro/maven'
+	}
+}
+
+dependencies {
+	compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+	testCompile "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
+	testCompile "junit:junit:4.12"
+	testCompile 'com.taroid.knit:knit:0.1.2'
+}
