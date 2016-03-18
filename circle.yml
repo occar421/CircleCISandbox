@@ -4,6 +4,7 @@ general:
 dependencies:
   pre:
     - chmod +x ./gradlew
+    - chmod +x /usr/local/bin/pip
 
 test:
   post:
