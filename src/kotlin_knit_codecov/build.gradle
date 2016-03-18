@@ -9,6 +9,7 @@ buildscript {
 }
 
 plugins {
+	id "jacoco"
 	id "com.github.kt3k.coveralls" version "2.6.3"
 }
 
@@ -28,8 +29,6 @@ dependencies {
 	testCompile "junit:junit:4.12"
 	testCompile 'com.taroid.knit:knit:0.1.2'
 }
-
-apply plugin: 'jacoco'
 
 jacocoTestReport {
 	reports {
