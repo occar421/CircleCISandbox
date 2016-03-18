@@ -10,9 +10,6 @@ test:
   post:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
     - find . -type f -regex ".*/build/test-results/TEST-.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
-    - gradle jacocoTestReport
+    - gradle jacocoTestReport coveralls
     - mkdir -p $CIRCLE_TEST_REPORTS/jacoco/
     - cp -r ./build/reports/jacoco/test/* $CIRCLE_TEST_REPORTS/jacoco
-    - pip install --upgrade pip
-    - pip install coveralls
-    - coveralls
