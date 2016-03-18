@@ -1,0 +1,15 @@
+general:
+  build_dir: ./src/jacoco/
+
+dependencies:
+  pre:
+    - chmod +x ./gradlew
+
+test:
+  post:
+    - mkdir -p $CIRCLE_TEST_REPORTS/junit/
+    - find . -type f -regex ".*/build/test-results/TEST-.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
+    - gradle jacocoTestReport
+    - mkdir -p $CIRCLE_TEST_REPORTS/jacoco/
+    - cp -r ./build/reports/jacoco/test/* $CIRCLE_TEST_REPORTS/jacoco
+    - bash <(curl -s https://codecov.io/bash)
