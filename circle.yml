@@ -7,7 +7,9 @@ dependencies:
 
 test:
   override:
-    - gradle test jacocoTestReport
+    - gradle test
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
     - find . -type f -regex ".*/build/test-results/TEST-.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
+    - gradle jacocoTestReport
+    - ls
     - bash <(curl -s https://codecov.io/bash)
