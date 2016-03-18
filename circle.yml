@@ -12,4 +12,5 @@ test:
     - gradle jacocoTestReport
     - mkdir -p $CIRCLE_TEST_REPORTS/jacoco/
     - cp -r ./build/reports/jacoco/test/* $CIRCLE_TEST_REPORTS/jacoco
-    - bash <(curl -s https://codecov.io/bash)
+    - pip install coveralls
+    - coveralls
