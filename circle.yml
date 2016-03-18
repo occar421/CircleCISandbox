@@ -12,5 +12,6 @@ test:
     - gradle jacocoTestReport
     - mkdir -p $CIRCLE_TEST_REPORTS/jacoco/
     - cp -r ./build/reports/jacoco/test/* $CIRCLE_TEST_REPORTS/jacoco
+    - pip install --upgrade pip
     - pip install coveralls
     - coveralls
